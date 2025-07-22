@@ -13,11 +13,10 @@
 
 ## App Flow
 
-1. **Splash Screen** - Shows while checking authentication status
-2. **Login Screen** - Azure AD authentication
-3. **Home Screen** - User info and main navigation
-4. **QR Scanner** - Camera-based QR code scanning
-5. **Success Screen** - Confirmation with attendance details
-6. **History Screen** - List of all past attendance records
+**Login Screen** - Azure AD authentication
+**Home Screen** - User info and main navigation
+**QR Scanner** - Camera-based QR code scanning
+**Success Screen** - Confirmation with attendance details
+**History Screen** - List of all past attendance records
 
 The app automatically handles session management and will navigate directly to the home screen if the user is already authenticated.
