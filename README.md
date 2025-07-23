@@ -1,22 +1,30 @@
-## Features Implemented
+# 📚 Student Attendance App
 
-✅ Azure AD Authentication with auto-login
-✅ QR Code Scanning with camera
-✅ Location tracking (GPS coordinates)
-✅ Device ID and IP address capture
-✅ Supabase backend integration
-✅ Attendance history with detailed records
-✅ Modern UI with GetX state management
-✅ Session persistence and validation
-✅ Comprehensive error handling
-✅ Real-time data updates
+A Flutter-based attendance tracking system using QR codes, location, IP address, and device ID. Built to simplify and secure student attendance in educational institutions.
 
-## App Flow
+---
 
-**Login Screen** - Azure AD authentication
-**Home Screen** - User info and main navigation
-**QR Scanner** - Camera-based QR code scanning
-**Success Screen** - Confirmation with attendance details
-**History Screen** - List of all past attendance records
+## 🚀 Features
 
-The app automatically handles session management and will navigate directly to the home screen if the user is already authenticated.
+- ✅ QR code scanning for attendance
+- 📍 Capture GPS location (latitude & longitude)
+- 🌐 Capture device IP address
+- 📱 Capture device ID
+- 🔐 Auth with Microsoft AAD OAuth
+- 📦 Data stored securely with Supabase
+- 🧠 Organized with GetX (state management & routing)
+- 🔔 Smart validations for duplicate scans
+
+---
+
+## 🛠️ Tech Stack
+
+- **Flutter** 🧡
+- **Dart**
+- **GetX** – for state management and routing
+- **Supabase** – as the backend
+- **Geolocator** – to fetch location
+- **Device Info Plus** – for device ID
+- **AAD OAuth** – Microsoft authentication
+
+---
