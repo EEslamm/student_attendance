@@ -17,14 +17,7 @@ class AttendanceSuccessScreen extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.green.shade50,
-              Colors.green.shade100,
-            ],
-          ),
+          color: Colors.white,
         ),
         child: SafeArea(
           child: Padding(

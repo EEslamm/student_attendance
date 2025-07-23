@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import '../models/attendance_model.dart';
@@ -23,11 +24,27 @@ class AttendanceController extends GetxController {
   Future<void> markAttendance(String qrData) async {
     try {
       isLoading.value = true;
-      
+
+      // ✅ تحقق إذا كان الـ QR معمول له اسكان قبل كده
+      final alreadyScanned = attendanceHistory.any((attendance) => attendance.qrData == qrData);
+      if (alreadyScanned) {
+        Get.snackbar(
+          'Notice',
+          'You have already marked your attendance for this session',
+          backgroundColor: Colors.blue,
+          colorText: Colors.white,
+          duration: Duration(seconds: 1),
+        );
+        await Future.delayed(Duration(seconds: 2)); // تنتظر شوية قبل ما ترجعه
+        Get.offAllNamed('/home'); // ترجع المستخدم للـ home
+        return;
+      }
+
+
       // Get device information
       final deviceId = await _deviceService.getDeviceId();
       final ipAddress = await _deviceService.getIpAddress();
-      
+
       // Get location
       Position? position;
       try {
@@ -35,7 +52,7 @@ class AttendanceController extends GetxController {
       } catch (e) {
         print('Location error: $e');
       }
-      
+
       // Create attendance record
       final attendance = AttendanceModel(
         email: _authController.currentUser.value!.email,
@@ -50,13 +67,12 @@ class AttendanceController extends GetxController {
 
       // Save to Supabase
       await _supabaseService.saveAttendance(attendance);
-      
+
       // Update local data
       lastAttendance.value = attendance;
       attendanceHistory.insert(0, attendance);
-      
+
       Get.toNamed('/attendance-success');
-      
     } catch (e) {
       Get.snackbar('Error', 'Failed to mark attendance: ${e.toString()}');
     } finally {

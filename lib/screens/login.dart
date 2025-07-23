@@ -114,15 +114,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     )),
                   ),
-                  SizedBox(height: 40),
-                  Text(
-                    'Sign in with your Microsoft account\nto access the attendance system',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
-                  ),
+
                 ],
               ),
             ),
