@@ -20,7 +20,7 @@ class AttendanceCard extends StatelessWidget {
           children: [
             _buildHeader(context),
             const SizedBox(height: 12),
-            _buildInfoRow(Icons.book, 'Course: ${attendance.courseId ?? 'N/A'}'),
+            _buildInfoRow(Icons.qr_code, 'Qr Data: ${attendance.qrData ?? 'N/A'}'),
             const SizedBox(height: 8),
             _buildInfoRow(Icons.phone_android, 'Device: ${_shortDeviceId()}'),
             const SizedBox(height: 8),

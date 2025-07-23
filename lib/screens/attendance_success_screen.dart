@@ -98,9 +98,9 @@ class AttendanceSuccessScreen extends StatelessWidget {
                                     Icons.email,
                                   ),
                                   _buildDetailRow(
-                                    'Course ID',
-                                    attendance.courseId ?? 'N/A',
-                                    Icons.book,
+                                    'Qr Data',
+                                    attendance.qrData ?? 'N/A',
+                                    Icons.qr_code,
                                   ),
                                   _buildDetailRow(
                                     'Device ID',
